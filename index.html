@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Abhisek Nayak — Data Analyst</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+<!-- SCROLL PROGRESS -->
+<div id="scroll-bar"></div>
+
+<!-- LOADER -->
+<div id="loader">
+  <div class="loader-logo">Welcome to My Profile</div>
+  <div class="loader-bar-track"><div class="loader-bar-fill" id="loaderFill"></div></div>
+  <div class="loader-pct" id="loaderPct">0%</div>
+</div>
+
+<!-- PARTICLE CANVAS -->
+<canvas id="particles"></canvas>
+
+<!-- CURSOR -->
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+<!-- PROJECT MODAL -->
+<div class="modal-backdrop" id="modal">
+  <div class="modal" id="modalContent">
+    <button class="modal-close" onclick="closeModal()">✕ Close</button>
+    <div class="modal-tag" id="modalTag"></div>
+    <div class="modal-title" id="modalTitle"></div>
+    <div class="modal-body" id="modalBody"></div>
+    <div class="modal-stats" id="modalStats"></div>
+    <div class="modal-tech" id="modalTech"></div>
+  </div>
+</div>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#about" onclick="closeMobile()">About</a>
+  <a href="#skills" onclick="closeMobile()">Skills</a>
+  <a href="#projects" onclick="closeMobile()">Projects</a>
+  <a href="#experience" onclick="closeMobile()">Experience</a>
+  <a href="#contact" onclick="closeMobile()">Contact</a>
+</div>
+
+<!-- NAV -->
+<nav id="mainNav">
+  <div class="nav-logo" style="margin-left: 20px;">
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" 
+    xmlns="http://www.w3.org/2000/svg" style="margin-right: 8px; vertical-align: middle;">
+    <circle cx="12" cy="8" r="4" fill="currentColor"/>
+    <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" fill="currentColor"/>
+  </svg>
+  Abhisek Nayak
+</div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#contact" class="nav-cta">Contact</a></li>
+  </ul>
+  <div class="hamburger" id="hamburger" onclick="toggleMobile()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-content fade-up visible">
+    <div class="hero-tag">Available for opportunities</div>
+    <h1>
+      Turning<br>
+      <span class="line2" id="typedText"></span><span class="blink"></span><br>
+      <span class="line3">into Insight.</span>
+    </h1>
+    <p class="hero-desc">Data Analyst with hands on Experience in analyzing 50K+ Records, specializing in EDA, RFM segmentation, churn analysis, dashboards and Skilled in Python, SQL, Excel, Power BI, Cloud & Devops Tools and Project Managment Tools.</p>
+    <div class="hero-btns">
+      <a href="#projects" class="btn-primary mag-btn">View My Work</a>
+      <a href="#contact" class="btn-secondary mag-btn">Get In Touch</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-item">
+        <div class="stat-num"><p>Fresher</p></div>
+        <div class="stat-label">Experience</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num" data-target="15">0<span>+</span></div>
+        <div class="stat-label">Projects Completed</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num" data-target="50">0<span>K+</span></div>
+        <div class="stat-label">Rows Analyzed</div>
+      </div>
+    </div>
+    <div class="scroll-indicator"><div class="scroll-line"></div><div class="scroll-text">Scroll</div></div>
+  </div>
+  <div class="hero-visual fade-up visible" style="transition-delay:0.2s">
+    <div class="dashboard-card tilt-card">
+      <div class="card-header">
+        <span class="card-title">Skills Proficiency</span>
+      </div>
+      <div class="bar-chart">
+        <div class="bar-group"><div class="bar-label">Python</div><div class="bar-track"><div class="bar-fill c1"></div></div><div class="bar-val">85%</div></div>
+        <div class="bar-group"><div class="bar-label">SQL</div><div class="bar-track"><div class="bar-fill c2"></div></div><div class="bar-val">95%</div></div>
+        <div class="bar-group"><div class="bar-label">Excel</div><div class="bar-track"><div class="bar-fill c3"></div></div><div class="bar-val">82%</div></div>
+        <div class="bar-group"><div class="bar-label">Power BI</div><div class="bar-track"><div class="bar-fill c4"></div></div><div class="bar-val">80%</div></div>
+        <div class="bar-group"><div class="bar-label">Statistics</div><div class="bar-track"><div class="bar-fill c5"></div></div><div class="bar-val">80%</div></div>
+        <div class="bar-group"><div class="bar-label">Cloud</div><div class="bar-track"><div class="bar-fill c6"></div></div><div class="bar-val">75%</div></div>
+        <div class="bar-group"><div class="bar-label">PM Tools</div><div class="bar-track"><div class="bar-fill c7"></div></div><div class="bar-val">70%</div></div>
+        <div class="bar-group"><div class="bar-label">Dev Tools</div><div class="bar-track"><div class="bar-fill c8"></div></div><div class="bar-val">90%</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-left fade-up">
+    <div class="about-img-wrapper">
+      <div class="avatar-placeholder">
+        <img src="./asset/Profile.jpg" alt="Abhisek Nayak">
+      </div>
+      <div class="about-corner">OPEN TO WORK</div>
+    </div>
+  </div>
+  <div class="about-right fade-up" style="transition-delay:0.15s">
+    <div class="section-tag">About Me</div>
+    <h2>Data <em>enthusiast</em> with a business mindset.</h2>
+    <div class="about-text">
+      <p>I'm a data analyst passionate about uncovering patterns in complex data and communicating findings that actually change decisions. I bridge the gap between raw numbers and strategic action.</p>
+      <p>With a background in B.Tech in Biotechnology, I've worked across E-commerce, Telecom, Healthcare, Finance, and Retail Sales Analytics — building dashboards, segmentation models, and automated pipelines that make teams faster and smarter.</p>
+      <p>When I'm not wrangling dataframes, I'm exploring new visualization techniques and working on portfolio projects that solve real business problems.</p>
+    </div>
+    <div class="tools-grid">
+      <div class="tool-tag">Python</div>
+      <div class="tool-tag">SQL</div>
+      <div class="tool-tag">Power BI</div>
+      <div class="tool-tag">Advanced Excel</div>
+      <div class="tool-tag">Statistical Analysis</div>
+      <div class="tool-tag">Cloud &amp; DevOps</div>
+      <div class="tool-tag">Project Management</div>
+      <div class="tool-tag">VS Code</div>
+      <div class="tool-tag">Google Colab</div>
+      <div class="tool-tag">Jupyter Notebook</div>
+      <div class="tool-tag">Google Sheets</div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="skills-intro">
+    <div><div class="section-tag">Expertise</div><h2>Core <em>Skills</em></h2></div>
+    <p class="skills-desc">A well-rounded analyst who covers the full spectrum — from raw data ingestion to executive-ready storytelling.</p>
+  </div>
+  <div class="skill-items">
+    <div class="skill-item fade-up tilt-card">
+      <div class="skill-icon">📊</div>
+      <div class="skill-name">Data Visualization</div>
+      <div class="skill-detail">Power BI · Excel · Matplotlib · Seaborn</div>
+      <div class="skill-bar"><div class="skill-progress" data-width="92"></div></div>
+    </div>
+    <div class="skill-item fade-up tilt-card" style="transition-delay:0.1s">
+      <div class="skill-icon">🗄️</div>
+      <div class="skill-name">SQL &amp; Databases</div>
+      <div class="skill-detail">SQLPlus · PostgreSQL</div>
+      <div class="skill-bar"><div class="skill-progress orange" data-width="88"></div></div>
+    </div>
+    <div class="skill-item fade-up tilt-card" style="transition-delay:0.2s">
+      <div class="skill-icon">🐍</div>
+      <div class="skill-name">Python Analytics</div>
+      <div class="skill-detail">Pandas · NumPy · Jupyter · Colab · VS Code</div>
+      <div class="skill-bar"><div class="skill-progress purple" data-width="85"></div></div>
+    </div>
+    <div class="skill-item fade-up tilt-card" style="transition-delay:0.25s">
+      <div class="skill-icon">🔬</div>
+      <div class="skill-name">Statistical Analysis</div>
+      <div class="skill-detail">EDA · Hypothesis Testing · Regression Analysis</div>
+      <div class="skill-bar"><div class="skill-progress green" data-width="80"></div></div>
+    </div>
+    <div class="skill-item fade-up tilt-card" style="transition-delay:0.05s">
+      <div class="skill-icon">☁️</div>
+      <div class="skill-name">Cloud &amp; DevOps</div>
+      <div class="skill-detail">AWS · CI/CD · Linux</div>
+      <div class="skill-bar"><div class="skill-progress" data-width="75"></div></div>
+    </div>
+    <div class="skill-item fade-up tilt-card" style="transition-delay:0.15s">
+      <div class="skill-icon">💼</div>
+      <div class="skill-name">Project Management</div>
+      <div class="skill-detail">Jira · Agile · Documentation</div>
+      <div class="skill-bar"><div class="skill-progress orange" data-width="70"></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="projects-header fade-up">
+    <div><div class="section-tag">Portfolio</div><h2>Selected <em>Projects</em></h2></div>
+    <a href="https://github.com/Abhisek7602" target="_blank" class="btn-secondary mag-btn" style="white-space:nowrap">View All Work →</a>
+  </div>
+  <div class="projects-grid">
+
+    <!-- 0: Consumer360 -->
+    <div class="project-card featured fade-up" onclick="openModal(0)">
+      <div class="card-overlay"></div>
+      <div class="project-preview">
+        <img src="./asset/Retail.png" alt="Consumer360 Retail Analytics">
+      </div>
+      <div class="project-info">
+        <div class="project-tags">
+          <span class="ptag">Python</span><span class="ptag">SQL</span>
+          <span class="ptag">Pandas</span><span class="ptag">Power BI</span>
+        </div>
+        <div class="project-name">Consumer360 — Retail Analytics Pipeline</div>
+        <div class="project-desc">End-to-end analytics platform processing 10K+ transactions. Click to explore →</div>
+        <span class="project-link">Open case study →</span>
+      </div>
+    </div>
+
+    <!-- 1: Telecom Churn -->
+    <div class="project-card fade-up" style="transition-delay:0.1s" onclick="openModal(1)">
+      <div class="card-overlay"></div>
+      <div class="project-preview">
+        <img src="./asset/telecom.jpg" alt="Telecom Churn Analysis">
+      </div>
+      <div class="project-info">
+        <div class="project-tags">
+          <span class="ptag">Python</span><span class="ptag">Pandas</span><span class="ptag">EDA</span>
+        </div>
+        <div class="project-name">Telecom Customer Churn Analysis</div>
+        <div class="project-desc">Analyzed 7,043 customers · 26.5% churn rate uncovered. Click to explore →</div>
+        <span class="project-link">Open case study →</span>
+      </div>
+    </div>
+
+    <!-- 2: Netflix -->
+    <div class="project-card fade-up" style="transition-delay:0.15s" onclick="openModal(2)">
+      <div class="card-overlay"></div>
+      <div class="project-preview">
+        <img src="./asset/Netflix.jpg" alt="Netflix Content Analysis">
+      </div>
+      <div class="project-info">
+        <div class="project-tags">
+          <span class="ptag">SQL</span><span class="ptag">PostgreSQL</span>
+        </div>
+        <div class="project-name">Netflix Content Strategy Analysis</div>
+        <div class="project-desc">Analyzed 8,800+ titles across 12 countries. Click to explore →</div>
+        <span class="project-link">Open case study →</span>
+      </div>
+    </div>
+
+    <!-- 3: Bank Loan -->
+    <div class="project-card fade-up" style="transition-delay:0.2s" onclick="openModal(3)">
+      <div class="card-overlay"></div>
+      <div class="project-preview">
+        <img src="./asset/Bank.jpg" alt="Bank Loan Report Dashboard">
+      </div>
+      <div class="project-info">
+        <div class="project-tags">
+          <span class="ptag">Excel</span><span class="ptag">Power Query</span><span class="ptag">PivotTables</span>
+        </div>
+        <div class="project-name">Bank Loan Report Dashboard</div>
+        <div class="project-desc">38.6K loan applications · $435.8M tracked. Click to explore →</div>
+        <span class="project-link">Open case study →</span>
+      </div>
+    </div>
+
+    <!-- 4: Walmart -->
+    <div class="project-card fade-up" style="transition-delay:0.25s" onclick="openModal(4)">
+      <div class="card-overlay"></div>
+      <div class="project-preview">
+        <img src="./asset/Walmart.jpg" alt="Walmart Sales Analysis">
+      </div>
+      <div class="project-info">
+        <div class="project-tags">
+          <span class="ptag">Python</span><span class="ptag">SQL</span><span class="ptag">PostgreSQL</span>
+        </div>
+        <div class="project-name">Walmart Sales Data Analysis</div>
+        <div class="project-desc">Python + PostgreSQL pipeline · 9 business problems solved. Click to explore →</div>
+        <span class="project-link">Open case study →</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="fade-up"><div class="section-tag">Career</div><h2>Work <em>Experience</em></h2></div>
+  <div class="timeline fade-up" style="transition-delay:0.15s">
+    <div class="timeline-item active">
+      <div class="tl-period">Jan 2026 — Present</div>
+      <div class="tl-role">Data Analyst Intern</div>
+      <div class="tl-company">Infotact Solutions · Remote</div>
+      <ul class="tl-bullets">
+        <li>Building Consumer360 — end-to-end retail analytics pipeline on PostgreSQL with RFM segmentation and Market Basket Analysis in Power BI</li>
+        <li>Developing AlphaPulse — financial portfolio risk and volatility monitor across 4 assets (AAPL, PFE, BTC, XOM) using Python and Tableau</li>
+        <li>Writing complex SQL queries and automating ETL pipelines using Python and SQLAlchemy</li>
+      </ul>
+    </div>
+    <div class="timeline-item">
+      <div class="tl-period">Dec 2024 — Dec 2025</div>
+      <div class="tl-role">Data Analyst Trainee</div>
+      <div class="tl-company">JSpiders · Bengaluru, Karnataka</div>
+      <ul class="tl-bullets">
+        <li>Trained extensively on Python, SQL, Excel, and Power BI through hands-on project work</li>
+        <li>Built Excel portfolio projects covering sales analytics, HR analytics, and superstore dashboards</li>
+        <li>Practiced SQL on Oracle EMP/DEPT datasets in preparation for technical interviews</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section id="certifications">
+  <div class="fade-up"><div class="section-tag">Credentials</div><h2>Certifications &amp; <em>Education</em></h2></div>
+  <div class="cert-grid">
+    <a href="https://mits.edu.in/index.php" target="_blank" rel="noopener noreferrer" class="cert-card fade-up">
+      <div class="cert-badge">🎓</div>
+      <div class="cert-issuer">Majhighariani Institute of Technology &amp; Science</div>
+      <div class="cert-name">B.Tech in Biotechnology</div>
+      <div class="cert-year">2024</div>
+    </a>
+    <a href="https://drive.google.com/file/d/1MusPb7yZMaw_shESFSq6O7ZueVlkW0bY/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="cert-card fade-up" style="transition-delay:0.1s">
+      <div class="cert-badge">📈</div>
+      <div class="cert-issuer">IBM</div>
+      <div class="cert-name">Data Analysis with Python</div>
+      <div class="cert-year">2025</div>
+    </a>
+    <a href="https://drive.google.com/file/d/1bS2b2GWiDOUuR-99VqSWaZedTJFy24qj/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="cert-card fade-up" style="transition-delay:0.2s">
+      <div class="cert-badge">📊</div>
+      <div class="cert-issuer">Simplilearn · SkillUp</div>
+      <div class="cert-name">Introduction to Data Analytics</div>
+      <div class="cert-year">2025</div>
+    </a>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-intro fade-up">
+    <div class="section-tag">Let's Connect</div>
+    <h2>Ready to turn your data into <em>impact?</em></h2>
+    <p>Open to full-time roles, internships, and project collaborations. Always happy to chat about data, analytics, or career opportunities.</p>
+    <div class="contact-links">
+      <a href="mailto:nayakabhisek7602@gmail.com" class="contact-link"><span class="contact-link-icon">📧</span>nayakabhisek7602@gmail.com</a>
+      <a href="https://www.linkedin.com/in/abhisek-nayak-88054a362/" target="_blank" class="contact-link"><span class="contact-link-icon">💼</span>LinkedIn</a>
+      <a href="https://github.com/Abhisek7602" target="_blank" class="contact-link"><span class="contact-link-icon">🐙</span>GitHub</a>
+      <a href="https://drive.google.com/file/d/11qNXHg453I9mwEHN7khcdsB3iHF25tF-/view?usp=drive_link" target="_blank" class="contact-link"><span class="contact-link-icon">📄</span>Download Resume (PDF)</a>
+    </div>
+  </div>
+  <div class="contact-form fade-up" style="transition-delay:0.15s">
+    <div class="form-group"><label class="form-label">Name *</label><input class="form-input" type="text" placeholder="Your name" id="f-name"></div>
+    <div class="form-group"><label class="form-label">Email *</label><input class="form-input" type="email" placeholder="you@company.com" id="f-email"></div>
+    <div class="form-group"><label class="form-label">Subject</label><input class="form-input" type="text" placeholder="Job opportunity / project / etc." id="f-subject"></div>
+    <div class="form-group"><label class="form-label">Message *</label><textarea class="form-textarea" placeholder="Tell me about your project or opportunity..." id="f-message"></textarea></div>
+    <button class="btn-primary mag-btn" onclick="sendForm()" style="width:100%;text-align:center;cursor:pointer;border:none;font-size:14px;padding:16px;">Send Message →</button>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-copy">© 2026 Abhisek Nayak · Built with passion for data</div>
+  <a href="#hero" class="footer-back">Back to top ↑</a>
+</footer>
+
+<script src="./script.js"></script>
+</body>
+</html>
